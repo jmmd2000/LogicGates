@@ -1,0 +1,144 @@
+/*
+
+     James Doyle - 2/4/2019
+     All code here is developed and created by James Doyle
+     Contact: jamesmddoyle@gmail.com
+              github.com/jmmd2000
+
+	Side project during a PLC Course in Dunboyne Institute of Further Education
+
+*/
+
+*:focus {
+	outline: none !important
+}
+
+ul {
+	list-style-type: none;
+	margin: auto;
+	padding: 0;
+	overflow: hidden;
+	background-color: #007DFF;
+	width: 70%;
+	border: 1px solid #0064FF;
+	border-radius: 15px;
+	box-shadow: -3px 3px #0064FF, -2px 2px #0064FF, -1px 1px #0064FF;
+}
+
+li {
+	float: left;
+	width: 12.5%;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 16px;
+	border: solid #007DFF;
+	border-width: 0px 2px 0px 0px;
+}
+
+li a:hover {
+	background-color: #0064FF;
+	text-decoration: underline;
+}
+
+body {
+	background-color: #E6E6E6;
+	text-align: center;
+	font-family: Verdana;
+}
+
+.active {
+	background-color: #0064FF;
+	text-decoration: underline;
+}
+
+#main-header {
+	font-size: 65px;
+	text-decoration: underline;
+}
+
+#sub-header {
+	font-size: 35px;
+}
+
+#start-button {
+	margin: auto;
+	margin-top: 50px;
+	margin-left: 25px;
+	margin-right: 25px;
+	cursor: pointer;
+}
+
+#start-button-1 {
+	margin: auto;
+	margin-top: 50px;
+	margin-left: 25px;
+	margin-right: 25px;
+	cursor: pointer;
+}
+
+#standard-start-button-1 {
+	margin: auto;
+	margin-top: 50px;
+	cursor: pointer;
+}
+
+#bulb {
+	margin: auto;
+	margin-top: 50px;
+}
+
+#standard-bulb {
+	margin: auto;
+	margin-top: 50px;
+}
+
+.start-off {
+	height: 150px;
+	width: 150px;
+	background-color: #408000;
+	border-radius: 50%;
+	border-width: 10px;
+	border-color: #999999;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.start-on {
+	height: 150px;
+	width: 150px;
+	background-color: #66ff33;
+	border-radius: 50%;
+	border-width: 10px;
+	border-color: #999999;
+	display: inline-block;
+	box-shadow: 0px 0px 10px 10px #66ff33;
+	cursor: pointer;
+}
+
+.bulb-off {
+	height: 150px;
+	width: 150px;
+	background-color: #7B7B28;
+	border-radius: 50%;
+	border-width: 10px;
+	border-color: #000000;
+	display: block;
+	box-shadow: 0px 0px 5px 2.5px #7B7B28;
+}
+
+.bulb-on {
+	height: 150px;
+	width: 150px;
+	background-color: #F0F016;
+	border-radius: 50%;
+	border-width: 10px;
+	border-color: #000000;
+	display: block;
+	box-shadow: 0px 0px 20px 10px #F0F016;
+}

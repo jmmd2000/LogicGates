@@ -1,0 +1,108 @@
+<!-- 
+
+     James Doyle - 2/4/2019
+     All code here is developed and created by James Doyle
+     Contact: jamesmddoyle@gmail.com
+              github.com/jmmd2000
+
+	Side project during a PLC Course in Dunboyne Institute of Further Education
+
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="logic-gates.css">
+	<link rel="icon" href="favicon.png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Logic Gates</title>
+  </head>
+  <body>
+	<h1 id="main-header">Logic Gates</h1>
+				<ul>
+					<li><a href="index.html">Standard Circuit</a></li>
+					<li><a href="not.html">NOT Gate</a></li>
+					<li><a href="and.html">AND Gate</a></li>
+					<li><a href="nand.html">NAND Gate</a></li>
+					<li><a href="or.html" class="active">OR Gate</a></li>
+					<li><a href="nor.html">NOR Gate</a></li>
+					<li><a href="xor.html">XOR Gate</a></li>
+					<li><a href="xnor.html">XNOR Gate</a></li>
+				</ul>
+
+				<h2>OR Gate</h2>
+				<h3>Either switch needs to be on for the bulb to light</h3>
+
+				<button class="start-off" id="start-button" value="true" onclick="power()"></button>
+				<button class="start-off" id="start-button-1" value="true" onclick="powerOne()"></button>
+				<span class="bulb-off" id="bulb"></span>
+
+				<script>
+					var buttonOneResult = 0; 
+					var buttonTwoResult = 0; 
+					bulb();
+					
+					 function power(){
+					var on = document.getElementById("start-button").value;
+					 if(on == "true"){
+					  $("#start-button").toggleClass("start-on");
+					  document.getElementById("start-button").value = "false"
+					  buttonOneResult = 1;
+					  console.log(buttonOneResult);
+					  bulb()
+					  }
+					 else{
+					  $("#start-button").toggleClass("start-on");
+					  document.getElementById("start-button").value = "true"
+					  if(buttonOneResult == 1){
+					  buttonOneResult = 0;
+					  console.log(buttonOneResult);
+					  bulb()
+					 }
+					 }
+				  }
+				  
+				  
+				  
+					 function powerOne(){
+					var on = document.getElementById("start-button-1").value;
+					 if(on == "true"){
+					  $("#start-button-1").toggleClass("start-on");
+					  document.getElementById("start-button-1").value = "false"
+					  buttonTwoResult = 1;
+					  console.log(buttonTwoResult);
+					  bulb()
+					  }
+					 else{
+					  $("#start-button-1").toggleClass("start-on");
+					  document.getElementById("start-button-1").value = "true"
+					  if(buttonTwoResult == 1){
+					  buttonTwoResult = 0;
+					  console.log(buttonTwoResult);
+					  bulb()
+					 }
+				  }
+				  }
+				  
+				  
+				  function bulb(){
+					  if(buttonOneResult == 1 || buttonTwoResult == 1){
+					  $("#bulb").removeClass("bulb-off").addClass("bulb-on");
+					  }
+					  else if(buttonOneResult == 0 || buttonTwoResult == 1){
+					  $("#bulb").removeClass("bulb-on").addClass("bulb-off");
+					  }
+					  else if(buttonOneResult == 1 || buttonTwoResult == 0){
+					  $("#bulb").removeClass("bulb-on").addClass("bulb-off");
+					  }
+					  else{
+					  $("#bulb").removeClass("bulb-on").addClass("bulb-off");
+					  }
+					  
+				  }
+				  
+				  </script>
+	</body>
+</html>

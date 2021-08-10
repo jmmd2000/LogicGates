@@ -1,0 +1,77 @@
+<!-- 
+
+     James Doyle - 2/4/2019
+     All code here is developed and created by James Doyle
+     Contact: jamesmddoyle@gmail.com
+              github.com/jmmd2000
+
+	Side project during a PLC Course in Dunboyne Institute of Further Education
+
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="logic-gates.css">
+	<link rel="icon" href="favicon.png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Logic Gates</title>
+  </head>
+  <body>
+	<h1 id="main-header">Logic Gates</h1>
+				<ul>
+					<li><a href="index.html">Standard Circuit</a></li>
+					<li><a href="not.html" class="active">NOT Gate</a></li>
+					<li><a href="and.html">AND Gate</a></li>
+					<li><a href="nand.html">NAND Gate</a></li>
+					<li><a href="or.html">OR Gate</a></li>
+					<li><a href="nor.html">NOR Gate</a></li>
+					<li><a href="xor.html">XOR Gate</a></li>
+					<li><a href="xnor.html">XNOR Gate</a></li>
+				</ul>
+
+				<h2>NOT Gate</h2>
+				<h3>The switch needs to be off for the bulb to light</h3>
+
+				<button class="start-off" id="standard-start-button" value="true" onclick="power()"></button>
+				<span class="bulb-off" id="standard-bulb"></span>
+
+				<script>
+					var buttonOneResult = 0; 
+					bulb();
+					
+					 function power(){
+					var on = document.getElementById("standard-start-button").value;
+					 if(on == "true"){
+					  $("#standard-start-button").toggleClass("start-on");
+					  document.getElementById("standard-start-button").value = "false"
+					  buttonOneResult = 1;
+					  console.log(buttonOneResult);
+					  bulb()
+					  }
+					 else{
+					  $("#standard-start-button").toggleClass("start-on");
+					  document.getElementById("standard-start-button").value = "true"
+					  if(buttonOneResult == 1){
+					  buttonOneResult = 0;
+					  console.log(buttonOneResult);
+					  bulb()
+					 }
+					 }
+				  }
+				  
+				  function bulb(){
+					  if(buttonOneResult == 1){
+					  $("#standard-bulb").removeClass("bulb-on").addClass("bulb-off");
+					  }
+					  else{
+					  $("#standard-bulb").removeClass("bulb-off").addClass("bulb-on");
+					  }
+					  
+				  }
+				  
+				  </script>
+	</body>
+</html>
